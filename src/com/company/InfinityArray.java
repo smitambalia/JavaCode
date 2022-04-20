@@ -1,7 +1,5 @@
 package com.company;
 
-import java.util.Arrays;
-
 public class InfinityArray {
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 9,  10, 12, 13, 15, 16, 17, 19, 21, 25, 27, 29, 31, 34};
