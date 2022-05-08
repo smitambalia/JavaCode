@@ -107,7 +107,6 @@ public class LL {
             this.next = next;
         }
     }
-    public static void main(String[] args) {
+//     insert using recursion
 
-    }
 }
