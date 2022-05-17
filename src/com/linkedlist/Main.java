@@ -2,11 +2,13 @@ package com.linkedlist;
 
 public class Main {
     public static void main(String[] args) {
-//        LL list = new LL();
-//        list.insertFirst(3);
-//        list.insertFirst(10);
-//        list.insertFirst(25);
-//        list.insertLast(93);
+        LL list = new LL();
+        list.insertFirst(3);
+        list.insertFirst(10);
+        list.insertFirst(25);
+        list.insertFirst(80);
+
+        //        list.insertLast(93);
 ////        System.out.println(list.deleteFirst());
 //        list.insert(11,3);
 //        list.display();
@@ -24,15 +26,25 @@ public class Main {
 ////          list.display();
 //          list.insert(90,101);
 //          list.display();
-        CLL list = new CLL();
-        list.insert(8);
-        list.insert(9);
-        list.insert(1);
-        list.insert(5);
+//        CLL list = new CLL();
+//        list.insert(8);
+//        list.insert(9);
+//        list.insert(1);
+//        list.insert(5);
+//
+//        list.display();
+//        list.delete(1);
+        list.display();
+//        System.out.printf();
+//        list.insertRec(88,2);
+//        list.display();
+//        list.reverseLL();
+//        list.reverseLLRecursive();
+//        list.display();
+//        int mid = list.findMiddle();
+        int mid = list.getMiddle();
 
-        list.display();
-        list.delete(1);
-        list.display();
+        System.out.println(mid);
 
     }
 }

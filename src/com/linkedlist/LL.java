@@ -3,7 +3,7 @@ package com.linkedlist;
 public class LL {
     private Node head;
     private Node tail;
-    private  int size;
+    private int size;
 
     public LL() {
         this.size = 0;
@@ -32,6 +32,41 @@ public class LL {
         head = node;
         if(tail ==null) tail = head;
         size +=1;
+    }
+//     insert using recursion
+    public  void insertRec(int value, int index) {
+        head = insertRec(value,index,head);
+    }
+
+    private  Node insertRec(int value , int index, Node node) {
+        System.out.printf("FOr the head " + index);
+        System.out.println(node.value);
+        if(index == 0) {
+            Node temp = new Node(value,node);
+            size++;
+            return temp;
+        }
+        node.next = insertRec(value,--index,node.next);
+
+        return node;
+    }
+    public int getMiddle() {
+        if(head == null) return -1;
+        if(head.next == null) return  head.value;
+        if(head.next.next == null) return head.next.value;
+
+        Node slow = head;
+        Node fast = head.next;
+
+        while(fast != null) {
+            fast = fast.next;
+            if(fast != null) {
+                fast = fast.next;
+            }
+            slow = slow.next;
+        }
+
+        return slow.value;
     }
     public void insertLast(int value) {
         Node node = new Node(value);
@@ -87,6 +122,52 @@ public class LL {
         if(head ==null) tail = null;
         size --;
         return val;
+    }
+
+    public void reverse(Node head,Node curr,Node prev) {
+        if(curr == null) {
+            head = prev;
+            return;
+        }
+        reverse(head,curr.next, curr);
+        curr.next = prev;
+    }
+    int getLength() {
+        Node temp = head;
+        int len = 0;
+        while (temp != null) {
+            temp = temp.next;
+            ++len;
+        }
+        return len;
+    }
+    int findMiddle() {
+        int len = getLength();
+        int mid = len /2;
+        Node temp = head;
+        for (int i=0; i < mid ;i++) {
+            temp = temp.next;
+        }
+        return temp.value;
+    }
+    public void reverseLLRecursive() {
+        Node curr = head;
+        Node prev = null;
+        reverse(head,curr,prev);
+    }
+    public void reverseLL() {
+        if(head == null || head.next == null) return;
+        Node prev = null;
+        Node curr = head;
+        Node forward = null;
+        while (curr != null) {
+            forward = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = forward;
+
+        }
+        head = prev;
     }
     public void display() {
         Node temp = head;
