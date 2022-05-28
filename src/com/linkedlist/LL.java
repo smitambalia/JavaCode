@@ -50,6 +50,24 @@ public class LL {
 
         return node;
     }
+
+    public void kReverse(int k) {
+        if(head == null|| head.next == null) return;
+        int cnt = 0;
+        Node prev = null;
+        Node curr = head;
+        Node fast = null;
+
+        while(cnt < k || curr.next != null) {
+            fast = curr.next;
+            curr.next = prev ;
+            prev = curr;
+            curr = fast;
+        }
+
+
+
+    }
     public int getMiddle() {
         if(head == null) return -1;
         if(head.next == null) return  head.value;

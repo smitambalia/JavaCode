@@ -7,6 +7,8 @@ public class Main {
         list.insertFirst(10);
         list.insertFirst(25);
         list.insertFirst(80);
+        list.insertFirst(95);
+
 
         //        list.insertLast(93);
 ////        System.out.println(list.deleteFirst());
