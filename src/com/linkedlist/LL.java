@@ -64,9 +64,6 @@ public class LL {
             prev = curr;
             curr = fast;
         }
-
-
-
     }
     public int getMiddle() {
         if(head == null) return -1;
@@ -142,14 +139,7 @@ public class LL {
         return val;
     }
 
-    public void reverse(Node head,Node curr,Node prev) {
-        if(curr == null) {
-            head = prev;
-            return;
-        }
-        reverse(head,curr.next, curr);
-        curr.next = prev;
-    }
+
     int getLength() {
         Node temp = head;
         int len = 0;
@@ -168,23 +158,41 @@ public class LL {
         }
         return temp.value;
     }
+
     public void reverseLLRecursive() {
         Node curr = head;
         Node prev = null;
-        reverse(head,curr,prev);
+        reverse(curr,prev);
     }
+
+    public void reverse(Node curr,Node prev) {
+
+        if(curr == null) {
+            head = prev;
+            return;
+        }
+
+        reverse(curr.next, curr);
+        curr.next = prev;
+        System.out.println(curr.value);
+    }
+
+
     public void reverseLL() {
+
         if(head == null || head.next == null) return;
+
         Node prev = null;
         Node curr = head;
         Node forward = null;
+
         while (curr != null) {
             forward = curr.next;
             curr.next = prev;
             prev = curr;
             curr = forward;
-
         }
+
         head = prev;
     }
     public void display() {
@@ -196,8 +204,8 @@ public class LL {
         System.out.println("END");
     }
     private  class Node {
-        private  int value ;
-        private  Node next;
+        private int value ;
+        private Node next;
         public Node(int value) {
             this.value = value;
         }

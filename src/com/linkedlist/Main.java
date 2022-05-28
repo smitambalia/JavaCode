@@ -41,12 +41,12 @@ public class Main {
 //        list.insertRec(88,2);
 //        list.display();
 //        list.reverseLL();
-//        list.reverseLLRecursive();
-//        list.display();
+        list.reverseLLRecursive();
+        list.display();
 //        int mid = list.findMiddle();
-        int mid = list.getMiddle();
+//        int mid = list.getMiddle();
 
-        System.out.println(mid);
+//        System.out.println(mid);
 
     }
 }
